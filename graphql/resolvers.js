@@ -1,4 +1,4 @@
-import { getById, getMovies, addMovie } from "./db";
+import { getById, getMovies, addMovie, deleteMovie } from "./db";
 
 const resolvers = {
   Query: {
@@ -7,8 +7,7 @@ const resolvers = {
   },
   Mutation: {
     addMovie: (_, { name, score }) => addMovie(name, score),
+    deleteMovie: (_, { id }) => deleteMovie(id),
   },
 };
 export default resolvers;
-
-//쿼리가 들어오면 people로 보내기
